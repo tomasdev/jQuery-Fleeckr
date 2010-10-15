@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Example</title>
+
+	<link rel="stylesheet" href="thispage.css" media="screen"  />
+
+</head>
+<body>
+
+<header>
+
+<h1>jQuery Fleeckr</h1>
+<h2>Flickr API plugin</h2>
+
+<h3>Available methods</h3>
+<p>Currently it only accept the getPhotos methods that don't require any kind of permission. Every method requires an extra parameter.</p>
+<dl>
+	<dt>flickr.galleries.getPhotos</dt>
+	<dd>Get photos from a gallery.<br />
+		<strong>extra</strong> syntax: gallery_id=([0-9]-[0-9])<br />
+		e.g.: 6065-72157617483228192<br />
+		<small><a href="http://www.flickr.com/services/api/flickr.urls.lookupGallery.html">check this out</a></small></dd>
+	<dt>flickr.groups.pools.getPhotos</dt>
+	<dd>Get photos from a group's pool.<br />
+		<strong>extra</strong> syntax: group_id=([0-9]@N[0-9])<br />
+		e.g.: 86881528@N00</dd>
+	<dt>flickr.panda.getPhotos</dt>
+	<dd>Get photos from asking a Panda<br />
+		<strong>extra</strong> syntax: panda_name=(ling ling|hsing hsing|wang wang)</dd>
+	<dt>flickr.people.getPublicPhotos</dt>
+	<dd>Get someone's uploaded photos<br />
+		<strong>extra</strong> syntax: user_id=([0-9]@N[0-9])<br />
+		e.g.: 31579803@N08</dd>
+	<dt>flickr.people.getPhotosOf</dt>
+	<dd>Get photos in which someone's is tagged<br />
+		<strong>extra</strong> syntax: user_id=([0-9]@N[0-9])<br />
+		e.g.: 31579803@N08 for tomasdev</dd>
+	<dt>flickr.photosets.getPhotos</dt>
+	<dd>Get photos from a set<br />
+		<strong>extra</strong> syntax: photoset_id=([0-9])<br />
+		e.g.: 72157623977103845</dd>
+</dl>
+
+<h3>Available templating tags</h3>
+<p>
+<strong>{{title}}</strong> : name of image<br />
+<strong>{{image_s}}</strong> : image is size s (75x75)<br />
+<strong>{{image_m}}</strong> : image is size m (medium size, about 300x200)<br />
+<strong>{{image_b}}</strong> : image is size b (big size, about 1024x768)<br />
+<strong>{{title}}</strong> : name of image<br />
+</p>
+
+<h3>General options</h3>
+<ul>
+	<li><strong>flickr</strong>: flickr API URL. Default: <pre>'http://api.flickr.com/services/'</pre></li>
+	<li><strong>limit</strong>: quantity of photos to append. Default: <pre>20</pre></li>
+	<li><strong>apikey</strong>: (required) API Key got from <a href="http://www.flickr.com/services/apps/create/apply/">registering an API key</a>. Default: <pre>none</pre></li>
+	<li><strong>jsoncallback:</strong> callback after getJSON is got an answer. Default: <pre>'?'</pre> (fleeckr function)</li>
+	<li><strong>method</strong>: one of Available method above mentioned. Default: <pre>'flickr.panda.getPhotos'</pre></li>
+	<li><strong>itemTemplate</strong>: markup for every photo result using Available templating tags mentioned above. Default: <pre>'&lt;div class=&quot;fleeckr-image&quot;&gt;&lt;a href=&quot;{{image_b}}&quot; title=&quot;{{title}}&quot;&gt;&lt;img alt=&quot;{{title}}&quot; src=&quot;{{image_s}}&quot; /&gt;&lt;/div&gt;'</pre></li>
+	<li><strong>extra</strong>: (required when method given) the extra parameter in the syntax need documented in this page. Default: <pre>'panda_name=wang wang'</pre></li>
+	<li><strong>itemCallback</strong>: You can add a callback on each item.  The scope is set to the container and the item object is made available. Default: <pre>none</pre></li>
+</ul>
+
+<h3>Instructions</h3>
+<p>
+1 - Please register for an API key in <a href="http://www.flickr.com/services/apps/create/apply/">Flickr</a>.<br />
+2 - Include jFleeckr script<br />
+3 - On document ready, assign jFleeckr to an element. See <a href="example.html">example</a>.<br />
+4 - Modify fleeckr.css as need.<br />
+5 - Enjoy.<br />
+</p>
+
+<footer>
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text" property="dct:title" rel="dct:type">jQuery Fleeckr</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://tomasroggero.com" property="cc:attributionName" rel="cc:attributionURL">Tomas Roggero</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://jquery.tomasdev.com.ar" rel="dct:source">jquery.tomasdev.com.ar</a>.
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+.fleeckr-ed{
+	background:#f0f0f0;
+	border:1px solid #dadada;
+	margin:15px auto;
+	overflow:hidden;
+	padding:9px 0 0 9px;
+	width:430px;
+}
+.fleeckr-ed .fleeckr-image{
+	float:left;
+	height:77px;
+	margin:0 9px 9px 0;
+	width:77px;
+}
+.fleeckr-ed .fleeckr-image a{
+	background:transparent;
+	border:0;
+	display:block;
+	padding:1px;
+	height:75px;
+	width:75px;
+}
+.fleeckr-ed .fleeckr-image img{
+	border:0;
+}
+.fleeckr-ed .fleeckr-image a:hover{
+	background:#f00;
+}

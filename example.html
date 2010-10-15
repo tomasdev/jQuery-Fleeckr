@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Fleeckr: a real Flickr plugin</title>
+	<link rel="stylesheet" href="thispage.css" media="screen" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+	<!-- jQuery fleeckr -->
+	<link rel="stylesheet" href="fleeckr.css" media="screen" />
+	<script src="jquery.fleeckr.js"></script>
+
+	<!-- jQuery colorbox -->
+	<link href="http://colorpowered.com/colorbox/core/example1/colorbox.css" media="screen" rel="stylesheet" />
+	<script src="http://colorpowered.com/colorbox/core/colorbox/jquery.colorbox.js"></script>
+
+</head>
+<body>
+
+<section id="content">
+	Fleeckr with Colorbox<br />
+	<div id="flickr"></div>
+	<br />
+	Fleeckr only API given<br />
+	<div id="flickr-2"></div>
+	<br />
+	<p>You can also concatenate jfleeckr to add photos inside the same div. Example:
+	<pre>$("#flickr").jfleeckr({
+			apikey: 'a43d0f79bbc56d823b039553379e28f0',
+			extra: 'photoset_id=72157623977103845',
+			method: 'flickr.photosets.getPhotos'
+		}).jfleeckr({apikey: 'a43d0f79bbc56d823b039553379e28f0'});</pre></p>
+	<br /><p>That means: append 20 pictures from the photoset, and then append panda's random selection to the same div#flickr</p>
+</section>
+
+<script>
+$(function(){
+	$("#flickr").jfleeckr({
+		apikey: 'a43d0f79bbc56d823b039553379e28f0',
+		extra: 'photoset_id=72157623977103845',
+		method: 'flickr.photosets.getPhotos'
+	}, function(data){
+		$('#flickr a').colorbox();
+	});
+	$("#flickr-2").jfleeckr({
+		apikey: 'a43d0f79bbc56d823b039553379e28f0'
+	});
+});
+</script>
+
+</body>
+</html>

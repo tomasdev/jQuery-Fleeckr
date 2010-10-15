@@ -1,0 +1,37 @@
+html, body, div, h1, h2, h3, h4, h5, h6, ul, dl, li, dt, dd, p, blockquote, pre, form, fieldset, table, th, td { margin: 0; padding: 0; } object, embed, a { outline:0 } a img, fieldset{ border:0; }
+
+
+body{
+	background:#fff;
+	color:#000;
+	font:normal 13px/1.3 Helvetica, Arial, sans-serif;
+	margin: 0 0 0 30px;
+}
+a{
+	color: #f00;
+	text-decoration: none;
+}
+a:hover{
+	text-decoration: underline;
+}
+
+p{ margin-bottom: 1em; }
+h1,h2,h3,h4{ margin:1em 0; }
+
+.left{ float:left }
+.right{float:right}
+.clr{clear:both }
+br.clr{ font-size:1px; line-height: 1px; }
+
+dl dt{ font-weight: bold; }
+dl dd{ padding:0 0 10px 30px; }
+pre{ padding: 0 20px; }
+ul{ list-style: none; }
+h1{ color:#fc0; }
+h2{ color:#f80; }
+h3{ color:#f30; }
+
+#content{
+	display: block;
+	padding:30px 0;
+}
