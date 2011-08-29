@@ -1,10 +1,13 @@
-/*
-* 2010 Tomas Roggero
-* Creative Commons Attribution-ShareAlike 3.0 Unported License
-*
-* Based on http://www.gethifi.com/blog/a-jquery-flickr-feed-plugin
-*
-*/
+/* jQuery Fleeckr - 0.1
+ * 
+ * Github:        http://github.com/tomasdev/jQuery-Fleeckr
+ * Documentation: http://jquery.tomasdev.com.ar/fleeckr/documentation.html
+ * 
+ * 2010 Tomas Roggero
+ *
+ * Creative Commons Attribution-ShareAlike 3.0 Unported License
+ * Based on http://www.gethifi.com/blog/a-jquery-flickr-feed-plugin
+ */
 
 (function($) {
 	$.fn.jfleeckr = function(settings, callback) {
