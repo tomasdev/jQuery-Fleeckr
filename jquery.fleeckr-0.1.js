@@ -1,4 +1,4 @@
-/* jQuery Fleeckr - 0.1
+/* jQuery Fleeckr - 0.1.1
  * 
  * Github:        http://github.com/tomasdev/jQuery-Fleeckr
  * Documentation: http://jquery.tomasdev.com.ar/fleeckr/documentation.html
@@ -21,7 +21,7 @@
 			jsoncallback: '?',
 			method: 'flickr.panda.getPhotos',
 			useTemplate: true,
-			itemTemplate: '<div class="fleeckr-image"><a href="{{image_b}}" title="{{title}}"><img alt="{{title}}" src="{{image_s}}" /></div>',
+			itemTemplate: '<div class="fleeckr-image"><a href="{{image_b}}" title="{{title}}"><img alt="{{title}}" src="{{image_s}}" /></a></div>',
 			extra: 'panda_name=wang wang',
 			itemCallback: function(){}
 		}, settings);
@@ -36,6 +36,7 @@
 			$.getJSON(url, function(data){
 				if(data.stat == "ok"){
 					var every = (settings.method == "flickr.photosets.getPhotos")?data.photoset:data.photos;
+					var content = "";
 					$.each(every.photo, function(i, item){
 						if(i < settings.limit){
 							item['url_s'] = (typeof item['url_s'] != "undefined")?item['url_s']:"http://farm"+item.farm+".static.flickr.com/"+item.server+"/"+item.id+"_"+item.secret+"_m.jpg";
@@ -50,11 +51,12 @@
 									var rgx = new RegExp('{{' + key + '}}', 'g');
 									template = template.replace(rgx, item[key]);
 								}
-								$container.append(template);
+								content += template;
 							}
 							settings.itemCallback.call(container, item);
 						}
 					});
+					$container.append(content);
 					if($.isFunction(callback)){
 						callback.call(container, every);
 					}
