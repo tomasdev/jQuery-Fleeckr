@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -8,17 +8,13 @@
 
 	<!-- jQuery fleeckr -->
 	<link rel="stylesheet" href="fleeckr.css" media="screen" />
-	<script src="jquery.fleeckr-0.1.js"></script>
-
-	<!-- jQuery colorbox -->
-	<link href="http://colorpowered.com/colorbox/core/example1/colorbox.css" media="screen" rel="stylesheet" />
-	<script src="http://colorpowered.com/colorbox/core/colorbox/jquery.colorbox.js"></script>
+	<script src="jquery.fleeckr-0.1.1.js"></script>
 
 </head>
 <body>
 
 <section id="content">
-	Fleeckr with Colorbox<br />
+	Fleeckr from SET<br />
 	<div id="flickr"></div>
 	<br />
 	Fleeckr only API given<br />
@@ -39,8 +35,6 @@ $(function(){
 		apikey: 'a43d0f79bbc56d823b039553379e28f0',
 		extra: 'photoset_id=72157623977103845',
 		method: 'flickr.photosets.getPhotos'
-	}, function(data){
-		$('#flickr a').colorbox();
 	});
 	$("#flickr-2").jfleeckr({
 		apikey: 'a43d0f79bbc56d823b039553379e28f0'
